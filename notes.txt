@@ -1,0 +1,5 @@
+Steps for creating my own site
+1.Start with layout
+2.build an api-clients.ts that I can import whenever I need to access an API
+3.Any get requests we do we have to make a Typscript interface so React knows what 
+to expect
