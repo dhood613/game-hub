@@ -1,4 +1,4 @@
-import { Box, Button, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import { NavBar } from "./components/NavBar";
 import { GameGrid } from "./components/GameGrid";
 import { GenreList } from "./components/GenreList";
@@ -22,7 +22,10 @@ function App() {
       </GridItem>
       {/* Aisde only visble on full displays */}
       <GridItem area="aside" display={{ base: "none", lg: "block" }}>
-        <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+        <GenreList
+          selectedGenre={selectedGenre}
+          onSelectGenre={(genre) => setSelectedGenre(genre)}
+        />
       </GridItem>
       <GridItem area="main">
         <GameGrid selectedGenre={selectedGenre} />

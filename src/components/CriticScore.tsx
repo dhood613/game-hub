@@ -13,7 +13,7 @@ export const CriticScore = ({ score }: Props) => {
   return (
     <Badge
       bg={getColor(score)}
-      color={getColor(score) === "yellow" ? "gray" : "white"}
+      color={getColor(score) === "yellow" ? "gray.800" : "white"}
       px={2}
       py={1}
       borderRadius="md"
