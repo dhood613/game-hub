@@ -6,6 +6,7 @@ export interface Game {
     //Bad design on API bc parent_platform is an array of objects
     //that have a platform object array
     parent_platforms: {platform:Platform}[];
+    metacritic: number;
   }
   
   export interface Platform{
