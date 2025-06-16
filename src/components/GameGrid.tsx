@@ -15,7 +15,7 @@ export const GameGrid = () => {
         spaceX={1}
       >
         {isLoading &&
-          Array.from({ length: 10 }).map((_, index) => (
+          Array.from({ length: 20 }).map((_, index) => (
             <GameCardContainer>
               <GameCardSkeleton key={index} />
             </GameCardContainer>
