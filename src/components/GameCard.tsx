@@ -9,7 +9,7 @@ interface Prop {
 
 export const GameCard = ({ game }: Prop) => {
   return (
-    <Card.Root borderRadius={10} overflow="hidden" width="300px">
+    <Card.Root>
       {/* ✅ Chakra's table cell component */}
       <Image
         src={game.background_image}
