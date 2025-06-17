@@ -20,13 +20,13 @@ export const GameCard = ({ game }: Prop) => {
         objectFit="cover"
       />
       <CardBody>
-        <Heading fontSize="2xl">{game.name}</Heading>
-        <HStack marginY={1} justify="space-between">
+        <HStack marginY={1} justify="space-between" marginBottom={3}>
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           ></PlatformIconList>
           <CriticScore score={game.metacritic}></CriticScore>
         </HStack>
+        <Heading fontSize="2xl">{game.name}</Heading>
       </CardBody>
     </Card.Root>
   );
