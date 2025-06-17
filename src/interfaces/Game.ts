@@ -7,6 +7,7 @@ export interface Game {
     //that have a platform object array
     parent_platforms: {platform:Platform}[];
     metacritic: number;
+    rating_top: number;
   }
   
   export interface Platform{

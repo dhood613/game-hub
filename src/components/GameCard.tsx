@@ -2,6 +2,7 @@ import type { Game } from "@/interfaces/Game";
 import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react"; // ✅ Make sure Td is imported from Chakra
 import { PlatformIconList } from "./PlatformIconList";
 import { CriticScore } from "./CriticScore";
+import { Emoji } from "./Emoji";
 // ✅ Import a placeholder image
 
 interface Prop {
@@ -26,7 +27,10 @@ export const GameCard = ({ game }: Prop) => {
           ></PlatformIconList>
           <CriticScore score={game.metacritic}></CriticScore>
         </HStack>
-        <Heading fontSize="2xl">{game.name}</Heading>
+        <Heading fontSize="2xl">
+          {game.name}
+          <Emoji rating={game.rating_top} />
+        </Heading>
       </CardBody>
     </Card.Root>
   );
