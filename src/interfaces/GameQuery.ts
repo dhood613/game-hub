@@ -7,4 +7,5 @@ import type { Platform } from './Game';
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string; // e.g., 'asc' or 'desc'
 }

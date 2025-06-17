@@ -6,7 +6,7 @@ import type { GameQuery } from "@/interfaces/GameQuery";
 
 const useGames= (gameQuery:GameQuery) => useData<Game>(
   '/games', 
-  {params:{genres:gameQuery.genre?.id,platforms:gameQuery.platform?.id}},
+  {params:{genres:gameQuery.genre?.id,platforms:gameQuery.platform?.id, ordering: gameQuery.sortOrder}},
   // [selectedGenre?.id, selectedPlatform?.id] is used to refetch the data when the selected genre or platform changes.
   // This is a dependency array that tells the hook to refetch the data when either of these values change. 
   [gameQuery] );
