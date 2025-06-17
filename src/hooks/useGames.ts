@@ -1,6 +1,5 @@
-import type { Game, Platform } from "@/interfaces/Game";
+import type { Game} from "@/interfaces/Game";
 import useData from "./useData";
-import type { Genre } from "@/interfaces/Genre";
 import type { GameQuery } from "@/interfaces/GameQuery";
 //We are only defining the variables we need.
 

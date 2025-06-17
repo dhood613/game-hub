@@ -1,4 +1,4 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Image } from "@chakra-ui/react";
 //Need to import the logo
 import logo from "../assets/GameHubResources/Logo/logo.webp";
 import { SearchInput } from "./SearchInput";
