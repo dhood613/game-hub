@@ -1,6 +1,6 @@
 import useGenres from "@/hooks/useGenres";
 import type { Genre } from "@/interfaces/Genre";
-import { Image, VStack, Text, HStack, Spinner, Button } from "@chakra-ui/react";
+import { Image, VStack, HStack, Spinner, Button } from "@chakra-ui/react";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;

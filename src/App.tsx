@@ -4,9 +4,14 @@ import { GameGrid } from "./components/GameGrid";
 import { GenreList } from "./components/GenreList";
 import type { Genre } from "./interfaces/Genre";
 import { useState } from "react";
+import { PlatformSelecter } from "./components/PlatformSelecter";
+import type { Platform } from "./interfaces/Game";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
   //Grid defines what the page will look like
   //Setting different sizes for moble and full screen
   return (
@@ -28,6 +33,10 @@ function App() {
         />
       </GridItem>
       <GridItem area="main">
+        <PlatformSelecter
+          selectedPlatform={selectedPlatform}
+          onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+        />
         <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>

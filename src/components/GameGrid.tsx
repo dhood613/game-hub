@@ -4,6 +4,9 @@ import { GameCard } from "./GameCard";
 import { GameCardSkeleton } from "./GameCardSkeleton";
 import { GameCardContainer } from "./GameCardContainer";
 import type { Genre } from "@/interfaces/Genre";
+import { PlatformSelecter } from "./PlatformSelecter";
+import { useState } from "react";
+import type { Platform } from "@/interfaces/Game";
 
 interface Props {
   selectedGenre: Genre | null;
