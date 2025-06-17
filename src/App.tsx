@@ -20,7 +20,9 @@ function App() {
       templateColumns={{ base: "1fr", lg: "200px 1fr" }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        />
       </GridItem>
       {/* Aisde only visble on full displays */}
       <GridItem area="aside" display={{ base: "none", lg: "block" }}>

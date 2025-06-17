@@ -2,6 +2,7 @@ import type { Game } from "@/interfaces/Game";
 import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react"; // ✅ Make sure Td is imported from Chakra
 import { PlatformIconList } from "./PlatformIconList";
 import { CriticScore } from "./CriticScore";
+// ✅ Import a placeholder image
 
 interface Prop {
   game: Game;
@@ -12,7 +13,7 @@ export const GameCard = ({ game }: Prop) => {
     <Card.Root>
       {/* ✅ Chakra's table cell component */}
       <Image
-        src={game.background_image}
+        src={game?.background_image}
         alt={game.name}
         height="250px"
         width="100%"

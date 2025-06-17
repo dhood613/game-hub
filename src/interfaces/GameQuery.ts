@@ -8,4 +8,5 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string; // e.g., 'asc' or 'desc'
+  searchText: string; // e.g., 'action', 'adventure', etc.
 }
