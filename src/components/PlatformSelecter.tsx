@@ -12,20 +12,17 @@ export const PlatformSelecter = ({
   const { data, err } = usePlatforms();
   if (err || !data) return null;
   return (
-    <select>
-      <option
-        value=""
-        onSelect={() => onSelectPlatform(null)}
-        selected={!selectedPlatform}
-      >
-        Platform
-      </option>
+    <select
+      value={selectedPlatform?.id || ""}
+      onChange={(event) => {
+        const selectedId = Number(event.target.value);
+        const selected = data.find((p) => p.id === selectedId) || null;
+        onSelectPlatform(selected);
+      }}
+    >
+      <option value="">Platform</option>
       {data.map((platform) => (
-        <option
-          key={platform.id}
-          value={platform.id}
-          onSelect={() => onSelectPlatform(platform)}
-        >
+        <option key={platform.id} value={platform.id}>
           {platform.name}
         </option>
       ))}

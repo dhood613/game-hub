@@ -4,15 +4,15 @@ import { GameCard } from "./GameCard";
 import { GameCardSkeleton } from "./GameCardSkeleton";
 import { GameCardContainer } from "./GameCardContainer";
 import type { Genre } from "@/interfaces/Genre";
-import { PlatformSelecter } from "./PlatformSelecter";
-import { useState } from "react";
 import type { Platform } from "@/interfaces/Game";
+import { select } from "framer-motion/client";
 
 interface Props {
   selectedGenre: Genre | null;
+  selectedPlatform: Platform | null;
 }
-export const GameGrid = ({ selectedGenre }: Props) => {
-  const { data, err, isLoading } = useGames(selectedGenre);
+export const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
+  const { data, err, isLoading } = useGames(selectedGenre, selectedPlatform);
   return (
     <>
       {err && <Text>{err}</Text>}
