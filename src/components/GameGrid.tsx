@@ -3,16 +3,13 @@ import useGames from "@/hooks/useGames";
 import { GameCard } from "./GameCard";
 import { GameCardSkeleton } from "./GameCardSkeleton";
 import { GameCardContainer } from "./GameCardContainer";
-import type { Genre } from "@/interfaces/Genre";
-import type { Platform } from "@/interfaces/Game";
-import { select } from "framer-motion/client";
+import type { GameQuery } from "@/interfaces/GameQuery";
 
 interface Props {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
+  gameQuery: GameQuery;
 }
-export const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
-  const { data, err, isLoading } = useGames(selectedGenre, selectedPlatform);
+export const GameGrid = ({ gameQuery }: Props) => {
+  const { data, err, isLoading } = useGames(gameQuery);
   return (
     <>
       {err && <Text>{err}</Text>}

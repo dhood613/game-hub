@@ -2,16 +2,12 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import { NavBar } from "./components/NavBar";
 import { GameGrid } from "./components/GameGrid";
 import { GenreList } from "./components/GenreList";
-import type { Genre } from "./interfaces/Genre";
-import { useState } from "react";
+import type { GameQuery } from "./interfaces/GameQuery.ts";
+import { use, useState } from "react";
 import { PlatformSelecter } from "./components/PlatformSelecter";
-import type { Platform } from "./interfaces/Game";
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
-    null
-  );
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   //Grid defines what the page will look like
   //Setting different sizes for moble and full screen
   return (
@@ -28,19 +24,18 @@ function App() {
       {/* Aisde only visble on full displays */}
       <GridItem area="aside" display={{ base: "none", lg: "block" }}>
         <GenreList
-          selectedGenre={selectedGenre}
-          onSelectGenre={(genre) => setSelectedGenre(genre)}
+          selectedGenre={gameQuery.genre}
+          onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
         />
       </GridItem>
       <GridItem area="main">
         <PlatformSelecter
-          selectedPlatform={selectedPlatform}
-          onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+          selectedPlatform={gameQuery.platform}
+          onSelectPlatform={(platform) =>
+            setGameQuery({ ...gameQuery, platform })
+          }
         />
-        <GameGrid
-          selectedPlatform={selectedPlatform}
-          selectedGenre={selectedGenre}
-        />
+        <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
   );
